@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import AnimatedBackground from "./components/AnimatedBackground";
 import "./App.css";
 import minhaImagem from './assets/cel.jpeg';
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"; 
 
 
 
@@ -51,14 +51,17 @@ export default function App() {
         <section className="habilidades">
 
             <div className="habilidade-card">
-                <div className="card-icon-wrapper">
-                    <i className="fas fa-code"></i> </div>
-                <h3 className="card-title">PROGRAMAÇÃO</h3>
-                <ul className="card-tech-list">
-                    <li>Lógica, Python, Java, C, C++</li>
-                </ul>
+              <div className="card-icon-wrapper">
+                <i className="fas fa-code"></i>
+              </div>
+              <h3 className="card-title">PROGRAMAÇÃO</h3>
+              <ul className="card-tech-list">
+                <li>Lógica, Python, Java, C, C++</li>
+              </ul>
             </div>
-            <div className="habilidade-card">
+
+            <div
+              className="habilidade-card">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-laptop-code"></i> </div>
                 <h3 className="card-title">FRONT-END</h3>
@@ -67,7 +70,7 @@ export default function App() {
                 </ul>
             </div>
 
-            <div className="habilidade-card">
+           <div className="habilidade-card">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-mobile-alt"></i> </div>
                 <h3 className="card-title">MOBILE</h3>
@@ -76,7 +79,10 @@ export default function App() {
                 </ul>
             </div>
 
-            <div className="habilidade-card ">
+            <div
+  className="habilidade-card"
+>
+
                 <div className="card-icon-wrapper">
                     <i className="fas fa-palette"></i> </div>
                 <h3 className="card-title">UX & DESIGN</h3>
@@ -85,7 +91,10 @@ export default function App() {
                 </ul>
             </div>
 
-            <div className="habilidade-card ">
+            <div
+  className="habilidade-card"
+>
+
                 <div className="card-icon-wrapper">
                     <i className="fas fa-chart-line"></i> </div>
                 <h3 className="card-title">GESTÃO</h3>
@@ -94,7 +103,10 @@ export default function App() {
                 </ul>
             </div>
 
-            <div className="habilidade-card ">
+            <div
+  className="habilidade-card"
+>
+
                 <div className="card-icon-wrapper">
                     <i className="fas fa-tools"></i> </div>
                 <h3 className="card-title">FERRAMENTAS</h3>
