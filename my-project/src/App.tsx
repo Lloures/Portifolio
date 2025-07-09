@@ -5,10 +5,36 @@ import minhaImagem from './assets/cel.jpeg';
 import { motion } from "framer-motion"; 
 
 
+function useSlideInOnScroll() {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".slide-in");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+
+    return () => {
+      elements.forEach(el => observer.unobserve(el));
+    };
+  }, []);
+}
+
 
 
 export default function App() {
+  useSlideInOnScroll();
   const [scrollY, setScrollY] = useState(0);
+
+  const isScrolled = scrollY > 100;
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -16,7 +42,6 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isScrolled = scrollY > 100;
 
   return (
     <>
@@ -69,7 +94,7 @@ export default function App() {
             </div>
 
             <div
-              className="habilidade-card ">
+              className="habilidade-card slide-in">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-laptop-code"></i> </div>
                 <h3 className="card-title">FRONT-END</h3>
@@ -78,7 +103,7 @@ export default function App() {
                 </ul>
             </div>
 
-           <div className="habilidade-card ">
+           <div className="habilidade-card slide-in">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-mobile-alt"></i> </div>
                 <h3 className="card-title">MOBILE</h3>
@@ -87,7 +112,7 @@ export default function App() {
                 </ul>
             </div>
 
-            <div className="habilidade-card ">
+            <div className="habilidade-card slide-in">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-palette"></i> </div>
                 <h3 className="card-title">UX & DESIGN</h3>
@@ -96,7 +121,7 @@ export default function App() {
                 </ul>
             </div>
 
-            <div className="habilidade-card ">
+            <div className="habilidade-card slide-in">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-chart-line"></i> </div>
                 <h3 className="card-title">GESTÃO</h3>
@@ -105,7 +130,7 @@ export default function App() {
                 </ul>
             </div>
 
-            <div className="habilidade-card ">
+            <div className="habilidade-card slide-in">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-tools"></i> </div>
                 <h3 className="card-title">FERRAMENTAS</h3>
@@ -114,7 +139,7 @@ export default function App() {
                 </ul>
             </div>
 
-            <div className="cursos ">
+            <div className="cursos slide-in">
                 <div>
                   <p className="subtitulo_2">CURSO: Acessibilidade Web</p>
                   <p className="descricao_2">Aprendido como criar aplicações web incluisvas para pessoas cegas ou 

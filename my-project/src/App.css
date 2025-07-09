@@ -31,7 +31,17 @@ html, body {
 /*BARRA DE ROLAGEM*/
 
 /* Animação */
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
 
+/* Quando entra na tela */
+.slide-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Animação */
 
 .App {
