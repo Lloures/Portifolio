@@ -9,6 +9,32 @@ html, body {
   overflow-x: hidden;
 }
 
+/*BARRA DE ROLAGEM*/
+/* Para navegadores baseados em WebKit (Chrome, Safari, Edge) */
+
+/* scrollbar total largura */
+/* scrollbar total largura */
+::-webkit-scrollbar {
+  width: 16px;
+  background: transparent; /* faz a barra de rolagem "transparente" */
+}
+
+/* track com gradiente */
+::-webkit-scrollbar-track {
+  background: rgb(8, 8, 8);
+  border-radius: 10px;
+}
+
+/* thumb preto com borda espaçadora */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, blue, red);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+
+/*BARRA DE ROLAGEM*/
 
 .App {
   width: 100vw;  /* Garante que a App ocupe 100% da tela */
