@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 
 
+
 export default function App() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -31,26 +32,33 @@ export default function App() {
       </nav>
 
       <div className="App">
-        
-        <div>
-          <p className="titulo-principal">LUIZA LOURES</p>
-          <p className="subtitulo">FRONTEND & PESQUISA</p>
-        </div>
+      <section className={`Principal ${scrollY > 150 ? 'expandido' : ''}`} id="Principal">
+  <div className="conteudo">
+    <div className={`nome ${isScrolled ? 'nome-menor' : ''}`}>
+      <p className="titulo">LUIZA LOURES</p>
+      <p className="subtitulo">FRONTEND & PESQUISA</p>
+    </div>
 
-        <section className="descricao-completa" id="sobre">
-          
-          <p>A paixão por criar interfaces que combinam beleza e funcionalidade me levou a explorar o mundo do desenvolvimento 
-            front-end e a pesquisar novas formas de interação humano-computador.</p>
-          
-          <p>Estudante de Ciência da Computação, entusiasta de
-                tecnologia e inovação, com interesse em desenvolvimento de software, UX design e
-                pesquisa. Buscando contribuir para projetos que impactam positivamente a sociedade por
-                meio da tecnologia.
-          </p>
-        </section>
+
+    <div className="descricao">
+      <p>
+        A paixão por criar interfaces que combinam beleza e funcionalidade me levou a explorar o mundo do desenvolvimento 
+        front-end e a pesquisar novas formas de interação humano-computador.
+      </p>
+      
+      <p>
+        Estudante de Ciência da Computação, entusiasta de tecnologia e inovação, com interesse em desenvolvimento de software, UX design e
+        pesquisa. Buscando contribuir para projetos que impactam positivamente a sociedade por
+        meio da tecnologia.
+      </p>
+    </div>
+  </div>
+</section>
+
+
         <section className="habilidades">
 
-            <div className="habilidade-card">
+            <div className="habilidade-card slide-in">
               <div className="card-icon-wrapper">
                 <i className="fas fa-code"></i>
               </div>
@@ -61,7 +69,7 @@ export default function App() {
             </div>
 
             <div
-              className="habilidade-card">
+              className="habilidade-card ">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-laptop-code"></i> </div>
                 <h3 className="card-title">FRONT-END</h3>
@@ -70,7 +78,7 @@ export default function App() {
                 </ul>
             </div>
 
-           <div className="habilidade-card">
+           <div className="habilidade-card ">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-mobile-alt"></i> </div>
                 <h3 className="card-title">MOBILE</h3>
@@ -79,10 +87,7 @@ export default function App() {
                 </ul>
             </div>
 
-            <div
-  className="habilidade-card"
->
-
+            <div className="habilidade-card ">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-palette"></i> </div>
                 <h3 className="card-title">UX & DESIGN</h3>
@@ -91,10 +96,7 @@ export default function App() {
                 </ul>
             </div>
 
-            <div
-  className="habilidade-card"
->
-
+            <div className="habilidade-card ">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-chart-line"></i> </div>
                 <h3 className="card-title">GESTÃO</h3>
@@ -103,10 +105,7 @@ export default function App() {
                 </ul>
             </div>
 
-            <div
-  className="habilidade-card"
->
-
+            <div className="habilidade-card ">
                 <div className="card-icon-wrapper">
                     <i className="fas fa-tools"></i> </div>
                 <h3 className="card-title">FERRAMENTAS</h3>
@@ -115,7 +114,7 @@ export default function App() {
                 </ul>
             </div>
 
-            <div className="cursos">
+            <div className="cursos ">
                 <div>
                   <p className="subtitulo_2">CURSO: Acessibilidade Web</p>
                   <p className="descricao_2">Aprendido como criar aplicações web incluisvas para pessoas cegas ou 

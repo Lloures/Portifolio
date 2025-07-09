@@ -15,22 +15,24 @@ html, body {
   background: transparent; /* faz a barra de rolagem "transparente" */
 }
 
-/* track com gradiente */
+/* Barra */
 ::-webkit-scrollbar-track {
   background: linear-gradient(to bottom, rgb(0, 102, 255), rgb(0, 195, 255), rgb(255, 17, 0));
   border-radius: 10px;
 }
 
-/* thumb preto com borda espaçadora */
+/* Rolagem */
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.63);
   border-radius: 10px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
-
-
 /*BARRA DE ROLAGEM*/
+
+/* Animação */
+
+/* Animação */
 
 .App {
   width: 100vw;  /* Garante que a App ocupe 100% da tela */
@@ -47,43 +49,6 @@ html, body {
   justify-content: center;
   transition: transform 0.3s ease;
 }
-
-.titulo-principal {
-  font-family: 'Righteous', sans-serif;
-  font-size: 6rem;
-  margin: 0;
-}
-
-.subtitulo {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 3rem;
-  margin: 0;
-}
-
-.descricao {
-  max-width: 800px;
-  margin: 2rem auto;
-  font-size: 1.2rem;
-  transition: opacity 0.5s ease;
-}
-
-.descricao-completa {
-  max-width: 800px;
-  margin: 2rem auto;
-  font-size: 1.5rem;
-  color: white;
-  transition: opacity 0.5s ease;
-  text-align: justify;
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-
-/* Inicialmente esconder descricao_completa */
-.descricao_completa {
-  opacity: 1;
-}
-
-/* Você pode adicionar estilos extras conforme preferir */
 
 /* NavBar */
 .navbar {
@@ -120,6 +85,80 @@ html, body {
     
 }
 /* NavBar */
+
+/* Estilo base */
+.Principal {
+  padding: 15rem 10vw;
+  text-align: center;
+  transition: all 0.6s ease;
+}
+
+.titulo {
+  font-family: 'Righteous', sans-serif;
+  font-size: 6rem;
+  margin: 0;
+  transition: font-size 0.6s ease;
+}
+
+.subtitulo {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+  margin-bottom: 3rem;
+  transition: font-size 0.6s ease;
+}
+
+.descricao {
+  margin-top: 10rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+  color: rgb(243, 241, 234);
+  text-align: justify;
+  pointer-events: none;
+}
+
+/* Quando scroll ativo */
+.Principal.expandido .titulo {
+  font-size: 3rem;
+}
+
+.Principal.expandido .subtitulo {
+  font-size: 1.5rem;
+}
+
+.Principal.expandido .descricao {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.titulo {
+  transition: font-size 1.5s ease;  /* estava 0.6s */
+}
+
+.subtitulo {
+  transition: font-size 1.5s ease;
+}
+
+.descricao {
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+
+
+.expandido {
+  margin-top: 10rem; 
+  margin-bottom: 5rem;
+}
+
+
+
+/* Habilidades */
 
 .habilidades {
   width: 100%; /* ocupa toda a largura da viewport */
@@ -213,7 +252,7 @@ html, body {
 /* CURSOS (dentro de habilidades) */
 
 .cursos {
-  grid-column: 1 / -1; /* Faz ela ocupar todas as colunas do grid */
+  grid-column: 1 / -1; 
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -241,6 +280,8 @@ html, body {
   font-size: 1rem;
 }
 
+/* Habilidades */
+
 /* Pesquisa */
 
 .pesquisa{
@@ -257,6 +298,8 @@ html, body {
   text-align: center;
 
 }
+
+/* Pesquisa */
 
 /* Contato */
 
@@ -380,3 +423,5 @@ html, body {
 .informacoes-contato a:hover {
   text-decoration: underline;
 }
+
+/* CONTATO */
