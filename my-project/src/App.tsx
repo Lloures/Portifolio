@@ -137,7 +137,25 @@ export default function App() {
             </div>
         </section>
          <section className="contato">
-          <div style={{height: "1000px"}}> </div>
+           <div className="lugar">
+                <div> <i className="fas fa-globe"></i> <p>Belo Horizonte, Brasil</p> </div>
+            </div>
+            <div className="colunas">
+                <div className="contatos">
+                  <h3 className="card-title">Contato</h3>
+                    <div> <i className="fas fa-phone"></i> <a href="tel:+5531985338564">(31) 98533-8564</a> </div>
+                    <div><i className="fas fa-envelope"></i> <a href="mailto:louresluiza6776@gmail.com">louresluiza6776@gmail.com</a></div>
+                    <div> <i className="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/luiza-loures-70137b324" target="_blank" rel="noopener noreferrer">
+      linkedin.com/in/luiza-loures-70137b324
+    </a> </div>
+                </div>
+                <div className="curiculo">
+                <h3 className="card-title">Curiculo</h3>
+                  <div> <i className="fas fa-eye"></i>  <a href="/curriculo.pdf" target="_blank" rel="noopener noreferrer">Visualize como PDF</a> </div>
+                </div>
+            </div>
+            <div className="linha"></div>
+            <div className="linha_fim"><p>©2025 Luiza Loures.</p></div>
         </section>
       </div>
     </>
