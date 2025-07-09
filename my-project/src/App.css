@@ -1,0 +1,254 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+.App {
+  width: 100vw;  /* Garante que a App ocupe 100% da tela */
+  overflow-x: hidden; /* Prevê scroll horizontal acidental */
+  text-align: center;
+  padding-top: 15vh;
+  color: white;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.titulo-principal {
+  font-family: 'Righteous', sans-serif;
+  font-size: 6rem;
+  margin: 0;
+}
+
+.subtitulo {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.descricao {
+  max-width: 800px;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  transition: opacity 0.5s ease;
+}
+
+.descricao-completa {
+  max-width: 800px;
+  margin: 2rem auto;
+  font-size: 1.5rem;
+  color: white;
+  transition: opacity 0.5s ease;
+  text-align: justify;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/* Inicialmente esconder descricao_completa */
+.descricao_completa {
+  opacity: 1;
+}
+
+/* Você pode adicionar estilos extras conforme preferir */
+
+/* NavBar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(241, 241, 241, 0); /* fundo transparente escuro */
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  top: 1%;
+  left: 3%;
+  right: 3%;
+  padding: 1%; 
+  border-radius: 25px;
+}
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* <-- MUITO IMPORTANTE: Mude para display: flex */
+    justify-content: space-around; /* <-- Distribui os itens igualmente no espaço */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    height: 100%; /* Garante que o UL preencha a altura do NAV */
+    width: 100%; /* Garante que o UL preencha a largura do NAV   font-weight: bold; */
+}
+.nav-links a {
+    color: var(--text-color-light); /* Verifique a cor do texto no Figma. Com fundo claro, talvez precise de texto escuro */
+    text-decoration: none;
+    text-transform: uppercase;
+    
+}
+/* NavBar */
+
+.habilidades {
+  width: 100%; /* ocupa toda a largura da viewport */
+  padding-left: 10vw;
+  padding-right: 10vw;
+
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  gap: 20px;
+  padding-top: 12%;
+  padding-bottom: 12%;
+  justify-items: center;
+  text-align: center;
+}
+
+
+
+/* CARD INDIVIDUAL DE HABILIDADE */
+.habilidade-card { /* Borda padrão (será sobrescrita por card específico) */
+    border-radius: 15px; /* Cantos arredondados */
+    padding-bottom: 15%; /* Padding inferior do card */
+    padding-top: 10%;
+    width: 100%; /* Ocupa a largura total da célula Grid */
+    max-width: 320px; /* Limita a largura máxima do card (ajuste conforme necessário) */
+    display: flex;
+    margin-bottom: 2vw;
+    background: linear-gradient(145deg, #131313, #030303);
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente o conteúdo interno do card */
+    color: var(--background-color-light); /* Cor do texto padrão para dentro do card */
+    overflow: hidden; /* Para garantir que o wrapper do cabeçalho não vaze */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* O "QUADRADO" TRANSLÚCIDO ENVOLVENDO APENAS O ÍCONE */
+.card-icon-wrapper {
+     
+    border-radius: 8px; /* Arredondamento do quadrado */
+    padding: 18px; /* <-- Ajuste o padding para o tamanho do quadrado */
+    margin-top: 20px; /* <-- Margem do topo do card até o quadrado */
+    margin-bottom: 10px; /* <-- Espaço entre o quadrado e o TÍTULO */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para o ícone (dentro do quadrado) */
+.habilidade-card .card-icon-wrapper i {
+    font-size: 3.0em; /* <-- Ajuste o tamanho do ícone. Era 4em. */
+    color: #d3e4e4; /* Cor do ícone (cor de destaque) */
+}
+
+/* Estilo para o TÍTULO DA SEÇÃO (agora separado) */
+.habilidade-card .card-title {
+    font-size: 1.4em;
+    color: #a9dbdb; /* Cor do título (cor de destaque) */
+    text-transform: uppercase;
+    margin-bottom: 15px; /* <-- Espaço entre o TÍTULO e a lista de tecnologias */
+    text-align: center; /* Garante que o título esteja centralizado */
+}
+
+/* Estilo para a lista de tecnologias (sem alterações) */
+.habilidade-card .card-tech-list {
+    list-style: none;
+    padding: 0 15px;
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--background-color-light);
+    text-align: center;
+    line-height: 1.4;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.habilidade-card .card-tech-list li {
+    margin-bottom: 5px;
+}
+
+.descricao_completa{
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: justify;
+  font-size: 1.5rem;
+}
+
+/* CURSOS (dentro de habilidades) */
+
+.cursos {
+  grid-column: 1 / -1; /* Faz ela ocupar todas as colunas do grid */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 4vw;
+  width: 100%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  box-sizing: border-box;
+  margin-top: 7rem;
+}
+.cursos > div {
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+.subtitulo_2 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.descricao_2 {
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 1rem;
+}
+
+/* Pesquisa */
+
+.pesquisa{
+  width: 100%; /* ocupa toda a largura da viewport */
+  padding-left: 10vw;
+  padding-right: 10vw;
+  grid-column: 1 / -1; 
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  gap: 20px;
+  padding-top: 12%;
+  padding-bottom: 10%;
+  justify-items: center;
+  text-align: center;
+
+}
+
+/* Contato */
+
+
+.contato{
+  width: 100%; /* ocupa toda a largura da viewport */
+  padding-left: 10vw;
+  padding-right: 10vw;
+
+  background-color: rgb(8, 8, 8);
+  gap: 20px;
+  padding-top: 12%;
+  padding-bottom: 10%;
+  justify-items: center;
+  text-align: center;
+
+}
