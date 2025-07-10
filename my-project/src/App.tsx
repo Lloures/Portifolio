@@ -80,6 +80,7 @@ export default function App() {
   </div>
 </section>
 
+    <div className="fundo">
 
         <section className="habilidades">
 
@@ -160,6 +161,57 @@ export default function App() {
               <img src={minhaImagem} alt="Descrição da imagem" />
             </div>
         </section>
+
+        <section className="Projetos" id="Projetos">
+            <p className="titulo-projetos">Projetos</p>
+            
+            <div className="conteiner-video">
+                <div className="video-wrapper">
+                    <img className="imagem" src={minhaImagem} alt="Globo MGTV" />
+                    <div className="titulo-video"><h3>Globo, MGTV _ 25/03/2025</h3></div>
+
+                    <div className="descricao-video">
+                      <h3 className="titulo-video_2">Globo, MGTV _ 25/03/2025</h3>
+                      <p className="texto-video">Grupo de projeto convidado para falar sobre um aplicativo de ensinar historia do brasil.</p>
+                      <button className="botao-play-wrapper">
+                        <span>Ver projeto</span>
+                        <i className="fas fa-caret-square-right"></i>
+                      </button>
+                    </div>
+                </div>
+
+              
+              <div className="video-wrapper">
+                  <img className="imagem" src={minhaImagem} alt="Globo MGTV" />
+                  <div  className="titulo-video"><h3>PILL BOX</h3></div>
+                  <div className="descricao-video">
+                    <h3 className="titulo-video_2">PILL BOX</h3>
+                    <p className="texto-video">Porta remedios automatizado com aplicativo para ajudar idosos que moram sozinhos, versão beta.</p>
+                    <button className="botao-play-wrapper" >
+                        <span>Ver projeto</span>
+                        <i className="fas fa-caret-square-right"></i>
+                      </button>
+                  </div>
+              </div>
+              
+              
+              <div className="video-wrapper">
+                <img className="imagem" src={minhaImagem} alt="Globo MGTV" />
+                  <div  className="titulo-video"><h3>Premio de melhor jogo</h3></div>
+                  <div className="descricao-video">
+                    <h3 className="titulo-video_2">Premio de melhor jogo</h3>
+                    <p className="texto-video">Trabalho interdiciplinar da faculdade para fazer um jogo, cujo meu grupo ganhou de melhor trabalho</p>
+                    <button className="botao-play-wrapper">
+                        <span>Ver projeto</span>
+                        <i className="fas fa-caret-square-right"></i>
+                      </button>
+                  </div>
+              </div>
+
+            </div>
+
+        </section>
+    </div>
          <section className="contato">
            <div className="lugar">
                 <div> <i className="fas fa-globe"></i> <p>Belo Horizonte, Brasil</p> </div>
