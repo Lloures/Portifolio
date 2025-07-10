@@ -51,6 +51,7 @@ export default function App() {
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#habilidades">Habilidades</a></li>
           <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#projetos">Projetos</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -64,7 +65,7 @@ export default function App() {
     </div>
 
 
-    <div className="descricao">
+    <div className="descricao" id="sobre">
       <p>
         A paixão por criar interfaces que combinam beleza e funcionalidade me levou a explorar o mundo do desenvolvimento 
         front-end e a pesquisar novas formas de interação humano-computador.
@@ -81,7 +82,7 @@ export default function App() {
 
     <div className="fundo">
 
-        <section className="habilidades">
+        <section className="habilidades" id="habilidades">
 
             <div className="habilidade-card slide-in">
               <div className="card-icon-wrapper">
@@ -152,7 +153,7 @@ export default function App() {
             </div>
 
         </section>
-        <section className="pesquisa">
+        <section className="pesquisa" id="experiencia">
             <div>
 
             </div>
@@ -161,7 +162,7 @@ export default function App() {
             </div>
         </section>
 
-        <section className="Projetos slide-in" id="Projetos">
+        <section className="Projetos slide-in" id="projetos">
             <p className="titulo-projetos">Projetos Curriculares</p>
             
             <div className="conteiner-video slide-in">
@@ -211,7 +212,7 @@ export default function App() {
 
         </section>
     </div>
-         <section className="contato">
+         <section className="contato" id="contato">
            <div className="lugar">
                 <div> <i className="fas fa-globe"></i> <p>Belo Horizonte, Brasil</p> </div>
             </div>
