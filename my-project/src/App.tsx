@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
 import AnimatedBackground from "./components/AnimatedBackground";
+import ImagemAnimada from "./components/ImagemAnimada";
+
 import "./App.css";
-import minhaImagem from './assets/cel.jpeg';
+
+import historia from './assets/historia.png';
+import pillbox from './assets/pillbox.png';
+import minhokiller from './assets/minhokiler.png';
+import manaus from './assets/manaus.jpeg';
+
 import { motion } from "framer-motion"; 
 
 
@@ -153,25 +160,39 @@ export default function App() {
             </div>
 
         </section>
-        <section className="pesquisa" id="experiencia">
-            <div>
-
+        
+        <section id="experiencia">
+          <div className="pesquisa" > 
+          <div className="pesquisa_descricao">
+              <h3>Pesquisa</h3>
+              <p>sei laaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </p>
+          </div>
+          <div className="pesquisa_fotos">
+            <div className="foto_principal slide-in">
+              <ImagemAnimada />
             </div>
-            <div>
-              <img src={minhaImagem} alt="Descrição da imagem" />
+          </div>
+          </div>
+           <div className="fotos_pequenas">
+              <img src={manaus} alt="Descrição da imagem" />
+              <img src={manaus} alt="Descrição da imagem" />
             </div>
         </section>
+
 
         <section className="Projetos slide-in" id="projetos">
             <p className="titulo-projetos">Projetos Curriculares</p>
             
             <div className="conteiner-video slide-in">
                 <div className="video-wrapper">
-                    <img className="imagem" src={minhaImagem} alt="Globo MGTV" />
+                    <img className="imagem" src={historia} alt="Globo MGTV" />
                     <div className="titulo-video"><h3>Globo, MGTV _ 25/03/2025</h3></div>
 
                     <div className="descricao-video">
-                      <h3 className="titulo-video_2">Globo, MGTV _ 25/03/2025</h3>
+                      <h3 className="titulo-video_2">Globo, MGTV 25/03/2025</h3>
                       <p className="texto-video">Grupo de projeto convidado para falar sobre um aplicativo de ensinar historia do brasil.</p>
                       <button className="botao-play-wrapper">
                         <span>Ver projeto</span>
@@ -182,7 +203,7 @@ export default function App() {
 
               
               <div className="video-wrapper">
-                  <img className="imagem" src={minhaImagem} alt="Globo MGTV" />
+                  <img className="imagem" src={pillbox} alt="Pilulas" />
                   <div  className="titulo-video"><h3>PILL BOX</h3></div>
                   <div className="descricao-video">
                     <h3 className="titulo-video_2">PILL BOX</h3>
@@ -196,7 +217,7 @@ export default function App() {
               
               
               <div className="video-wrapper">
-                <img className="imagem" src={minhaImagem} alt="Globo MGTV" />
+                <img className="imagem" src={minhokiller} alt="Medusa" />
                   <div  className="titulo-video"><h3>Premio de melhor jogo</h3></div>
                   <div className="descricao-video">
                     <h3 className="titulo-video_2">Premio de melhor jogo</h3>

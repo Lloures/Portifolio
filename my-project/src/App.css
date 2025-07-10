@@ -9,6 +9,19 @@ html, body {
   overflow-x: hidden;
 }
 
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.1; /* você pode aumentar para 0.1 se quiser mais forte */
+  mix-blend-mode: soft-light;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+
 /*BARRA DE ROLAGEM*/
 ::-webkit-scrollbar {
   width: 16px;
@@ -295,18 +308,76 @@ html, body {
 
 /* Pesquisa */
 
-.pesquisa{
-  width: 100%; /* ocupa toda a largura da viewport */
-  padding-left: 10vw;
-  padding-right: 10vw;
-  grid-column: 1 / -1; 
-  gap: 20px;
-  padding-top: 12%;
-  padding-bottom: 10%;
-  justify-items: center;
-  text-align: center;
-
+.pesquisa {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start; /* começa alinhado ao topo */
+  justify-content: space-between;
+  gap: 4vw;
+  width: 100%;
+  padding: 7rem 12vw 0 12vw;
+  box-sizing: border-box;
 }
+
+.pesquisa_descricao {
+  text-align: left;
+  word-break: break-word;
+}
+
+.pesquisa_descricao p {
+  text-align: justify;
+  font-size: 1.5rem;
+}
+
+.pesquisa_descricao h3 {
+  text-align: justify;
+  font-size: 3rem;
+}
+
+.pesquisa_fotos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.foto_principal {
+  max-width: 40rem;
+  max-height: 50rem;
+  background-color: #00000011;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.foto_principal img {
+  object-fit: cover;
+  border-radius: 7%;
+  display: block;
+  max-width: 40rem;
+  max-height: 45rem;
+}
+
+.fotos_pequenas {
+  justify-items: right;
+  text-align: right;
+  align-items: right;
+  margin-left: 12vw;
+  margin-right: 12.4vw;
+  margin-top: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  z-index: 0;
+}
+
+.fotos_pequenas img {
+  border-radius: 7%;
+  max-width: 20rem;
+  margin: 1vw;
+}
+
 
 /* Pesquisa */
 
@@ -316,7 +387,7 @@ html, body {
   width: 100%;
   height: auto;          /* Mantém proporção natural */
   display: block;
-  border-radius: 25px;   /* Faz a imagem seguir as bordas do card */
+  border-radius: 7%;   /* Faz a imagem seguir as bordas do card */
   transition: opacity 0.5s ease;
   margin-bottom: 1rem;
 }
@@ -326,7 +397,7 @@ html, body {
   position: relative;
   width: 100%;
   max-width: 27rem;
-  border-radius: 25px;
+  border-radius: 7%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -342,14 +413,15 @@ html, body {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 1rem;
-  font-size: 1rem;
+  padding: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
   background: #030303;
   width: 100%;
   z-index: 1;
   text-align: left;
   color: #F1F1F1;
+  padding-left: 2.2rem;
 }
 
 /* DESCRIÇÃO (APARECE NO HOVER) */
@@ -358,7 +430,6 @@ html, body {
   top: 0;
   left: 0;
   background: #F1F1F1;
-  padding: 2rem;
   width: 100%;
   height: 100%;
   color: #030303;
@@ -376,6 +447,13 @@ html, body {
   box-sizing: border-box;         /* <- ESSENCIAL para padding funcionar certo */
   overflow-wrap: break-word;      /* <- Garante quebra de palavras longas */
   word-wrap: break-word;          /* <- Compatibilidade */
+}
+
+.texto-video{
+  font-size: 1.5rem;
+}
+.titulo-video_2{
+  font-size: 2rem;
 }
 
 
@@ -403,19 +481,23 @@ html, body {
   border: none;
   color: #000;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
   z-index: 10;
   transition: color 0.3s ease;
 }
 
 .botao-play-wrapper i {
-  font-size: 1.3rem;
+  font-size: 3rem;
   color: #030303;
 }
 
 .botao-play-wrapper:hover {
   color: #333;
+}
+
+.botao-play-wrapper i:hover {
+  color: rgba(0, 0, 0, 0.333);
 }
 
 

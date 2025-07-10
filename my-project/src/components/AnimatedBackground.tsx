@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import noiseImg from '/home/lloures/Documentos/Portifolio/Portifolio/my-project/src/assets/noise.png';
+
 
 const vertexShader = `
   varying vec2 vUv;
@@ -100,27 +102,36 @@ export default function AnimatedBackground() {
   }, []);
 
   return (
-    <Canvas
-      orthographic
-      camera={{
-        left: -window.innerWidth / 2,
-        right: window.innerWidth / 2,
-        top: window.innerHeight / 2,
-        bottom: -window.innerHeight / 2,
-        near: 0.1,
-        far: 1000,
-        position: [0, 0, 10],
-      }}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        zIndex: -1,
-      }}
-    >
-      <ShaderPlane mouseRef={mouseRef} />
-    </Canvas>
+    <>
+      <Canvas
+        orthographic
+        camera={{
+          left: -window.innerWidth / 2,
+          right: window.innerWidth / 2,
+          top: window.innerHeight / 2,
+          bottom: -window.innerHeight / 2,
+          near: 0.1,
+          far: 1000,
+          position: [0, 0, 10],
+        }}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: -1,
+        }}
+      >
+        <ShaderPlane mouseRef={mouseRef} />
+      </Canvas>
+
+      <img
+        src={noiseImg}
+        alt="Ruído de fundo"
+        className="grain-overlay"
+      />
+    </>
   );
 }
+
