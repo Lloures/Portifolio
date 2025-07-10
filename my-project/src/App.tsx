@@ -177,9 +177,16 @@ export default function App() {
           </div>
           </div>
            <div className="fotos_pequenas">
-              <img src={manaus} alt="Descrição da imagem" />
-              <img src={manaus} alt="Descrição da imagem" />
-            </div>
+  {[1, 2].map((_, i) => (
+    <div className="foto-hover-wrapper" key={i}>
+      <img className="foto-hover-img" src={manaus} alt="SIBGRAP_2025" />
+      <div className="descricao-foto-hover">
+        <h3>SIBGRAP_2025</h3>
+      </div>
+    </div>
+  ))}
+</div>
+
         </section>
 
 
