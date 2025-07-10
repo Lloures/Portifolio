@@ -12,23 +12,26 @@ html, body {
 /*BARRA DE ROLAGEM*/
 ::-webkit-scrollbar {
   width: 16px;
-  background: transparent; /* faz a barra de rolagem "transparente" */
+  background: non;
 }
 
-/* Barra */
+
 ::-webkit-scrollbar-track {
-  background: linear-gradient(to bottom, rgb(0, 102, 255), rgb(0, 195, 255), rgb(255, 17, 0));
   border-radius: 10px;
+  background: none !important;
+  box-shadow: none !important;
 }
 
-/* Rolagem */
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.63);
+  background: linear-gradient(to bottom, rgb(0, 102, 255), rgb(0, 195, 255), rgb(255, 17, 0));
   border-radius: 10px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
 /*BARRA DE ROLAGEM*/
+
+
 
 /* Animação */
 .slide-in {
@@ -166,21 +169,20 @@ html, body {
   margin-bottom: 5rem;
 }
 
-
+.fundo{ /* tira o fundo colorido */
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
 
 /* Habilidades */
 
 .habilidades {
   width: 100%; /* ocupa toda a largura da viewport */
-  padding-left: 10vw;
-  padding-right: 10vw;
-
+  padding-left: 12vw;
+  padding-right: 12vw;
   box-sizing: border-box;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
   gap: 20px;
   padding-top: 12%;
   padding-bottom: 12%;
@@ -199,36 +201,36 @@ html, body {
     max-width: 320px; /* Limita a largura máxima do card (ajuste conforme necessário) */
     display: flex;
     margin-bottom: 2vw;
-    background: linear-gradient(145deg, #131313, #030303);
+    background: transparent;
     flex-direction: column;
     align-items: center; /* Centraliza horizontalmente o conteúdo interno do card */
     color: var(--background-color-light); /* Cor do texto padrão para dentro do card */
     overflow: hidden; /* Para garantir que o wrapper do cabeçalho não vaze */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* O "QUADRADO" TRANSLÚCIDO ENVOLVENDO APENAS O ÍCONE */
 .card-icon-wrapper {
-     
-    border-radius: 8px; /* Arredondamento do quadrado */
-    padding: 18px; /* <-- Ajuste o padding para o tamanho do quadrado */
-    margin-top: 20px; /* <-- Margem do topo do card até o quadrado */
-    margin-bottom: 10px; /* <-- Espaço entre o quadrado e o TÍTULO */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  padding: 10px; /* espaço interno ao redor do ícone */
+  border-radius: 8px;
+  background-color: #0097B1;
+  width: auto;
 }
 
 /* Estilo para o ícone (dentro do quadrado) */
 .habilidade-card .card-icon-wrapper i {
-    font-size: 3.0em; /* <-- Ajuste o tamanho do ícone. Era 4em. */
-    color: #d3e4e4; /* Cor do ícone (cor de destaque) */
+    font-size: 2.0em; /* <-- Ajuste o tamanho do ícone. Era 4em. */
+    color: #030303; /* Cor do ícone (cor de destaque) */
 }
 
 /* Estilo para o TÍTULO DA SEÇÃO (agora separado) */
 .habilidade-card .card-title {
-    font-size: 1.4em;
-    color: #a9dbdb; /* Cor do título (cor de destaque) */
+    font-size: 1.7em;
+    color: #F1F1F1; /* Cor do título (cor de destaque) */
     text-transform: uppercase;
     margin-bottom: 15px; /* <-- Espaço entre o TÍTULO e a lista de tecnologias */
     text-align: center; /* Garante que o título esteja centralizado */
@@ -256,7 +258,7 @@ html, body {
 .descricao_completa{
   font-family: 'Josefin Sans', sans-serif;
   text-align: justify;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /* CURSOS (dentro de habilidades) */
@@ -299,8 +301,6 @@ html, body {
   padding-left: 10vw;
   padding-right: 10vw;
   grid-column: 1 / -1; 
-  background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
   gap: 20px;
   padding-top: 12%;
   padding-bottom: 10%;
@@ -313,8 +313,6 @@ html, body {
 
 /*Projetos*/
 
-
-/* IMAGEM */
 .imagem {
   width: 100%;
   height: auto;          /* Mantém proporção natural */
@@ -325,8 +323,6 @@ html, body {
 }
 
 
-
-/* CONTAINER DO CARD */
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -455,9 +451,9 @@ html, body {
 /* TÍTULO DA SEÇÃO */
 .titulo-projetos {
   grid-column: 1 / -1;
-  text-align: center;
+  text-align: left;
   font-size: 3rem;
-  margin-bottom: 3rem;
+  padding-left: 12vw;
 }
 
 

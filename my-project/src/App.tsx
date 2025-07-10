@@ -29,7 +29,6 @@ function useSlideInOnScroll() {
 }
 
 
-
 export default function App() {
   useSlideInOnScroll();
   const [scrollY, setScrollY] = useState(0);
@@ -162,10 +161,10 @@ export default function App() {
             </div>
         </section>
 
-        <section className="Projetos" id="Projetos">
-            <p className="titulo-projetos">Projetos</p>
+        <section className="Projetos slide-in" id="Projetos">
+            <p className="titulo-projetos">Projetos Curriculares</p>
             
-            <div className="conteiner-video">
+            <div className="conteiner-video slide-in">
                 <div className="video-wrapper">
                     <img className="imagem" src={minhaImagem} alt="Globo MGTV" />
                     <div className="titulo-video"><h3>Globo, MGTV _ 25/03/2025</h3></div>
