@@ -153,7 +153,6 @@ export default function App() {
             </div>
 
         </section>
-
         <section className="pesquisa">
             <div>
 
