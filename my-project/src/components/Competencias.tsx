@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 const competencias = [
-  { nome: "Programação", descricao: "Habilidades em lógica, Python, Java, C, C++." },
-  { nome: "Front-end", descricao: "Experiência com HTML, CSS, React, TypeScript." },
-  { nome: "Mobile", descricao: "Desenvolvimento em Flutter e Dart." },
+  { nome: "Programação", descricao: "Lógica, Python, Java, C, C++." },
+  { nome: "Front-end", descricao: "HTML, CSS, React, TypeScript." },
+  { nome: "Mobile", descricao: "Desenvolvimento em Flutter ( Dart )." },
   { nome: "UX & Design", descricao: "Design de interfaces, Figma, edição de vídeo." },
   { nome: "Gestão", descricao: "Liderança, Scrum, métodos ágeis." },
   { nome: "Ferramentas", descricao: "Git, Linux, PowerPoint, Canvas." },
