@@ -56,6 +56,10 @@ html, body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.bloco-parallax img {
+  transition: transform 0.3s ease;
+}
 /* Animação */
 
 .App {
@@ -468,6 +472,8 @@ html, body {
 }
 
 
+
+
 /* TÍTULO INFERIOR (SOME NO HOVER) */
 .titulo-video {
   position: absolute;
@@ -600,7 +606,6 @@ html, body {
   font-size: 3rem;
   padding-left: 13vw;
 }
-
 
 /* Contato */
 
@@ -767,4 +772,115 @@ html, body {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+
+
+
+
+
+
+.competencias-container {
+  display: flex;
+  width: 100%;
+  padding: 0 12vw;
+  gap: 2rem;
+  color: white;
+  box-sizing: border-box;
+  padding-bottom: 10vw;
+}
+
+.competencias-titulo {
+  flex-basis: 30%;
+  padding-right: 1rem;
+  text-align: left;
+  font-size: 3rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+
+.competencias-titulo h2 {
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-size: 2.5rem;
+  color: white;
+  line-height: 1.2;
+}
+
+.descricao-wrapper {
+  position: relative;
+  min-height: 3.5rem; /* garante espaço para descrição */
+  width: 100%;
+}
+
+.competencias-titulo .descricao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  color: #ccc;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  max-width: 90%;
+  line-height: 1.2;
+}
+
+.competencias-titulo .descricao.visivel {
+  opacity: 1;
+}
+
+.competencias-lista {
+  flex-basis: 70%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.competencias-lista li {
+  font-size: 7rem;
+  line-height: 0.53;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  font-weight: 400;
+  display: inline-block;
+  max-width: max-content;
+  transition: color 0.3s ease, font-weight 0.3s ease, opacity 0.3s ease;
+  z-index: 0;
+}
+
+/* bolha azul atrás do texto */
+.competencias-lista li::before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  bottom: -2rem;
+  left: -2rem;
+  right: -2rem;
+  background-color: rgba(5, 238, 255, 0.548);
+  border-radius: 100px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.competencias-lista li.ativo::before,
+.competencias-lista li:hover::before,
+.competencias-lista li:focus::before {
+  opacity: 1;
+}
+
+.competencias-lista:hover li:not(:hover):not(.ativo),
+.competencias-lista:has(li.ativo) li:not(.ativo) {
+  opacity: 0.2;
 }

@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
+
 
 import AnimatedBackground from "./components/AnimatedBackground";
 import ImagemAnimada from "./components/ImagemAnimada";
 import VideoComModal from "./components/VideoComModal";
+import Competencias from "./components/Competencias";
+
 
 
 import "./App.css";
@@ -67,7 +71,6 @@ export default function App() {
   return (
     <>
       <AnimatedBackground />
-
       <nav className="navbar">
         <ul className="nav-links">
           <li><a href="#sobre">Sobre</a></li>
@@ -77,7 +80,6 @@ export default function App() {
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-
       <div className="App">
       <section className={`Principal ${scrollY > 150 ? 'expandido' : ''}`} id="Principal">
   <div className="conteudo">
@@ -103,6 +105,8 @@ export default function App() {
 </section>
 
     <div className="fundo">
+
+      
 
         <section className="habilidades" id="habilidades">
 
@@ -175,6 +179,8 @@ export default function App() {
             </div>
 
         </section>
+
+        <section className="competencias"> <Competencias /> </section>
         
         <section id="experiencia">
           <div className="pesquisa" > 
@@ -192,15 +198,15 @@ export default function App() {
           </div>
           </div>
            <div className="fotos_pequenas">
-  {[1, 2].map((_, i) => (
-    <div className="foto-hover-wrapper" key={i}>
-      <img className="foto-hover-img" src={manaus} alt="SIBGRAP_2025" />
-      <div className="descricao-foto-hover">
-        <h3>SIBGRAP_2025</h3>
-      </div>
-    </div>
-  ))}
-</div>
+            {[1, 2].map((_, i) => (
+              <div className="foto-hover-wrapper" key={i}>
+                <img className="foto-hover-img" src={manaus} alt="SIBGRAP_2025" />
+                <div className="descricao-foto-hover">
+                  <h3>SIBGRAP_2025</h3>
+                </div>
+              </div>
+            ))}
+          </div>
 
         </section>
 
@@ -209,42 +215,42 @@ export default function App() {
             <p className="titulo-projetos">Projetos Curriculares</p>
             
              <div className="conteiner-video slide-in">
-        <div className="video-wrapper">
-          <img className="imagem" src={historia} alt="Globo MGTV" />
-          <div className="titulo-video"><h3>Globo, MGTV _ 25/03/2025</h3></div>
-          <div className="descricao-video">
-            <h3 className="titulo-video_2">Globo, MGTV 25/03/2025</h3>
-            <p className="texto-video">Grupo de projeto convidado para falar sobre um aplicativo de ensinar história do Brasil.</p>
-            <button className="botao-play-wrapper" onClick={() => abrirVideo("https://www.youtube.com/embed/3XdXJm_bGHQ")}>
-              Ver projeto <i className="fas fa-caret-square-right"></i>
-            </button>
-          </div>
-        </div>
+                <div className="video-wrapper">
+                  <img className="imagem" src={historia} alt="Globo MGTV" />
+                  <div className="titulo-video"><h3>Globo, MGTV _ 25/03/2025</h3></div>
+                  <div className="descricao-video">
+                    <h3 className="titulo-video_2">Globo, MGTV 25/03/2025</h3>
+                    <p className="texto-video">Grupo de projeto convidado para falar sobre um aplicativo de ensinar história do Brasil.</p>
+                    <button className="botao-play-wrapper" onClick={() => abrirVideo("https://www.youtube.com/embed/3XdXJm_bGHQ")}>
+                      Ver projeto <i className="fas fa-caret-square-right"></i>
+                    </button>
+                  </div>
+                </div>
 
-        <div className="video-wrapper">
-          <img className="imagem" src={pillbox} alt="Pill Box" />
-          <div className="titulo-video"><h3>PILL BOX</h3></div>
-          <div className="descricao-video">
-            <h3 className="titulo-video_2">PILL BOX</h3>
-            <p className="texto-video">Porta remédios automatizado com aplicativo para ajudar idosos que moram sozinhos.</p>
-            <button className="botao-play-wrapper" onClick={() => abrirVideo("https://www.youtube.com/embed/mft5FnJulzM")}>
-              Ver projeto <i className="fas fa-caret-square-right"></i>
-            </button>
-          </div>
-        </div>
+                <div className="video-wrapper">
+                  <img className="imagem" src={pillbox} alt="Pill Box" />
+                  <div className="titulo-video"><h3>PILL BOX</h3></div>
+                  <div className="descricao-video">
+                    <h3 className="titulo-video_2">PILL BOX</h3>
+                    <p className="texto-video">Porta remédios automatizado com aplicativo para ajudar idosos que moram sozinhos.</p>
+                    <button className="botao-play-wrapper" onClick={() => abrirVideo("https://www.youtube.com/embed/mft5FnJulzM")}>
+                      Ver projeto <i className="fas fa-caret-square-right"></i>
+                    </button>
+                  </div>
+                </div>
 
-        <div className="video-wrapper">
-          <img className="imagem" src={minhokiller} alt="Minhokiller" />
-          <div className="titulo-video"><h3>Prêmio de melhor jogo</h3></div>
-          <div className="descricao-video">
-            <h3 className="titulo-video_2">Prêmio de melhor jogo</h3>
-            <p className="texto-video">Trabalho interdisciplinar da faculdade cujo grupo ganhou como melhor trabalho.</p>
-            <button className="botao-play-wrapper" onClick={() => abrirVideo("https://www.youtube.com/embed/His-NcpzziE")}>
-              Ver projeto <i className="fas fa-caret-square-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+                <div className="video-wrapper">
+                  <img className="imagem" src={minhokiller} alt="Minhokiller" />
+                  <div className="titulo-video"><h3>Prêmio de melhor jogo</h3></div>
+                  <div className="descricao-video">
+                    <h3 className="titulo-video_2">Prêmio de melhor jogo</h3>
+                    <p className="texto-video">Trabalho interdisciplinar da faculdade cujo grupo ganhou como melhor trabalho.</p>
+                    <button className="botao-play-wrapper" onClick={() => abrirVideo("https://www.youtube.com/embed/His-NcpzziE")}>
+                      Ver projeto <i className="fas fa-caret-square-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
 
         </section>
     </div>
