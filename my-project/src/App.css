@@ -84,7 +84,7 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 99;
   backdrop-filter: blur(8px);
   top: 1%;
   left: 3%;
@@ -92,6 +92,7 @@ html, body {
   padding: 1%; 
   border-radius: 25px;
 }
+
 .nav-links {
     list-style: none;
     padding: 0;
@@ -354,7 +355,7 @@ html, body {
 
 .foto_principal img {
   object-fit: cover;
-  border-radius: 7%;
+  border-radius: 30px;
   display: block;
   max-width: 40rem;
   max-height: 45rem;
@@ -388,7 +389,7 @@ html, body {
   text-align: right;
   align-items: right;
   position: relative;
-  border-radius: 7%;
+  border-radius: 25px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.1);
   transition: background 0.5s ease;
@@ -398,7 +399,7 @@ html, body {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 7%;
+  border-radius: 25px;
   transition: opacity 0.4s ease;
 }
 
@@ -415,7 +416,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 7%;
+  border-radius: 25px;
   color: black;
   font-weight: bold;
   font-size: 1.5rem;
@@ -437,11 +438,16 @@ html, body {
 
 /*Projetos*/
 
+.Projetos{
+  padding-bottom: 10vw;
+  padding-top: 5vw;
+}
+
 .imagem {
   width: 100%;
   height: auto;          /* Mantém proporção natural */
   display: block;
-  border-radius: 7%;   /* Faz a imagem seguir as bordas do card */
+  border-radius: 35px;   /* Faz a imagem seguir as bordas do card */
   transition: opacity 0.5s ease;
   margin-bottom: 1rem;
 }
@@ -451,7 +457,7 @@ html, body {
   position: relative;
   width: 100%;
   max-width: 27rem;
-  border-radius: 7%;
+  border-radius: 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -544,14 +550,17 @@ html, body {
 .botao-play-wrapper i {
   font-size: 3rem;
   color: #030303;
+  border: none;
 }
 
 .botao-play-wrapper:hover {
   color: #333;
+  border: none;
 }
 
 .botao-play-wrapper i:hover {
   color: rgba(0, 0, 0, 0.333);
+  border: none;
 }
 
 
@@ -578,7 +587,8 @@ html, body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding: 12% 12vw;
+  padding-left: 12vw;
+  padding-right: 12vw;
   justify-items: center;
   text-align: center;
 }
@@ -588,7 +598,7 @@ html, body {
   grid-column: 1 / -1;
   text-align: left;
   font-size: 3rem;
-  padding-left: 12vw;
+  padding-left: 13vw;
 }
 
 
@@ -716,3 +726,45 @@ html, body {
 }
 
 /* CONTATO */
+
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-caixa {
+  position: relative;
+  width: 90vw;
+  max-width: 1200px;
+  height: 50vw;
+  max-height: 675px;
+  background: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-caixa iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.fechar-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

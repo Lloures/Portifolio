@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
+
 import AnimatedBackground from "./components/AnimatedBackground";
 import ImagemAnimada from "./components/ImagemAnimada";
+import VideoComModal from "./components/VideoComModal";
+
 
 import "./App.css";
 
@@ -10,7 +13,7 @@ import minhokiller from './assets/minhokiler.png';
 import manaus from './assets/manaus.jpeg';
 
 import { motion } from "framer-motion"; 
-
+import VideoModal from "./components/VideoComModal";
 
 function useSlideInOnScroll() {
   useEffect(() => {
@@ -39,6 +42,18 @@ function useSlideInOnScroll() {
 export default function App() {
   useSlideInOnScroll();
   const [scrollY, setScrollY] = useState(0);
+  const [mostrarModal, setMostrarModal] = useState(false);
+  const [videoAtual, setVideoAtual] = useState<string | null>(null);
+
+  const abrirVideo = (url: string) => {
+    setVideoAtual(url);
+    setMostrarModal(true);
+  };
+
+  const fecharVideo = () => {
+    setMostrarModal(false);
+    setVideoAtual(null);
+  };
 
   const isScrolled = scrollY > 100;
 
@@ -193,50 +208,43 @@ export default function App() {
         <section className="Projetos slide-in" id="projetos">
             <p className="titulo-projetos">Projetos Curriculares</p>
             
-            <div className="conteiner-video slide-in">
-                <div className="video-wrapper">
-                    <img className="imagem" src={historia} alt="Globo MGTV" />
-                    <div className="titulo-video"><h3>Globo, MGTV _ 25/03/2025</h3></div>
+             <div className="conteiner-video slide-in">
+        <div className="video-wrapper">
+          <img className="imagem" src={historia} alt="Globo MGTV" />
+          <div className="titulo-video"><h3>Globo, MGTV _ 25/03/2025</h3></div>
+          <div className="descricao-video">
+            <h3 className="titulo-video_2">Globo, MGTV 25/03/2025</h3>
+            <p className="texto-video">Grupo de projeto convidado para falar sobre um aplicativo de ensinar história do Brasil.</p>
+            <button className="botao-play-wrapper" onClick={() => abrirVideo("https://www.youtube.com/embed/3XdXJm_bGHQ")}>
+              Ver projeto <i className="fas fa-caret-square-right"></i>
+            </button>
+          </div>
+        </div>
 
-                    <div className="descricao-video">
-                      <h3 className="titulo-video_2">Globo, MGTV 25/03/2025</h3>
-                      <p className="texto-video">Grupo de projeto convidado para falar sobre um aplicativo de ensinar historia do brasil.</p>
-                      <button className="botao-play-wrapper">
-                        <span>Ver projeto</span>
-                        <i className="fas fa-caret-square-right"></i>
-                      </button>
-                    </div>
-                </div>
+        <div className="video-wrapper">
+          <img className="imagem" src={pillbox} alt="Pill Box" />
+          <div className="titulo-video"><h3>PILL BOX</h3></div>
+          <div className="descricao-video">
+            <h3 className="titulo-video_2">PILL BOX</h3>
+            <p className="texto-video">Porta remédios automatizado com aplicativo para ajudar idosos que moram sozinhos.</p>
+            <button className="botao-play-wrapper" onClick={() => abrirVideo("https://www.youtube.com/embed/mft5FnJulzM")}>
+              Ver projeto <i className="fas fa-caret-square-right"></i>
+            </button>
+          </div>
+        </div>
 
-              
-              <div className="video-wrapper">
-                  <img className="imagem" src={pillbox} alt="Pilulas" />
-                  <div  className="titulo-video"><h3>PILL BOX</h3></div>
-                  <div className="descricao-video">
-                    <h3 className="titulo-video_2">PILL BOX</h3>
-                    <p className="texto-video">Porta remedios automatizado com aplicativo para ajudar idosos que moram sozinhos, versão beta.</p>
-                    <button className="botao-play-wrapper" >
-                        <span>Ver projeto</span>
-                        <i className="fas fa-caret-square-right"></i>
-                      </button>
-                  </div>
-              </div>
-              
-              
-              <div className="video-wrapper">
-                <img className="imagem" src={minhokiller} alt="Medusa" />
-                  <div  className="titulo-video"><h3>Premio de melhor jogo</h3></div>
-                  <div className="descricao-video">
-                    <h3 className="titulo-video_2">Premio de melhor jogo</h3>
-                    <p className="texto-video">Trabalho interdiciplinar da faculdade para fazer um jogo, cujo meu grupo ganhou de melhor trabalho</p>
-                    <button className="botao-play-wrapper">
-                        <span>Ver projeto</span>
-                        <i className="fas fa-caret-square-right"></i>
-                      </button>
-                  </div>
-              </div>
-
-            </div>
+        <div className="video-wrapper">
+          <img className="imagem" src={minhokiller} alt="Minhokiller" />
+          <div className="titulo-video"><h3>Prêmio de melhor jogo</h3></div>
+          <div className="descricao-video">
+            <h3 className="titulo-video_2">Prêmio de melhor jogo</h3>
+            <p className="texto-video">Trabalho interdisciplinar da faculdade cujo grupo ganhou como melhor trabalho.</p>
+            <button className="botao-play-wrapper" onClick={() => abrirVideo("https://www.youtube.com/embed/His-NcpzziE")}>
+              Ver projeto <i className="fas fa-caret-square-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
         </section>
     </div>
@@ -262,6 +270,9 @@ export default function App() {
             <div className="linha_fim"><p>©2025 Luiza Loures.</p></div>
         </section>
       </div>
+       {mostrarModal && videoAtual && (
+        <VideoModal videoUrl={videoAtual} onClose={fecharVideo} />
+      )}
     </>
   );
 }
