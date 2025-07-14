@@ -15,6 +15,7 @@ import historia from './assets/historia.png';
 import pillbox from './assets/pillbox.png';
 import minhokiller from './assets/minhokiler.png';
 import manaus from './assets/manaus.jpeg';
+import bolsa from './assets/comprida.jpeg';
 
 import { motion } from "framer-motion"; 
 import VideoModal from "./components/VideoComModal";
@@ -74,7 +75,7 @@ export default function App() {
       <nav className="navbar">
         <ul className="nav-links">
           <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#habilidades">Competências</a></li>
           <li><a href="#experiencia">Experiência</a></li>
           <li><a href="#projetos">Projetos</a></li>
           <li><a href="#contato">Contato</a></li>
@@ -91,14 +92,14 @@ export default function App() {
 
     <div className="descricao" id="sobre">
       <p>
-        A paixão por criar interfaces que combinam beleza e funcionalidade me levou a explorar o mundo do desenvolvimento 
-        front-end e a pesquisar novas formas de interação humano-computador.
+        Movida pela paixão em criar interfaces que aliam estética e funcionalidade, mergulhei no universo do desenvolvimento 
+        front-end e da pesquisa em interação humano-computador. Acredito no poder do design e da tecnologia para transformar experiências.
       </p>
       
       <p>
-        Estudante de Ciência da Computação, entusiasta de tecnologia e inovação, com interesse em desenvolvimento de software, UX design e
-        pesquisa. Buscando contribuir para projetos que impactam positivamente a sociedade por
-        meio da tecnologia.
+        Sou estudante de Ciência da Computação, entusiasta de inovação e tecnologia, com interesse especial em desenvolvimento 
+        de software, UX design e pesquisa. Busco contribuir para projetos que gerem impacto positivo na sociedade por 
+        meio de soluções criativas e acessíveis.
       </p>
     </div>
   </div>
@@ -107,8 +108,9 @@ export default function App() {
     <div className="fundo">
 
       
-
         <section className="habilidades" id="habilidades">
+
+             {/* Preferi o outro
 
             <div className="habilidade-card slide-in">
               <div className="card-icon-wrapper">
@@ -166,6 +168,8 @@ export default function App() {
                 </ul>
             </div>
 
+              */}
+
             <div className="cursos slide-in">
                 <div>
                   <p className="subtitulo_2">CURSO: Acessibilidade Web</p>
@@ -180,15 +184,25 @@ export default function App() {
 
         </section>
 
-        <section className="competencias"> <Competencias /> </section>
+        <section className="competencias  slide-in"> <Competencias /> </section>
         
-        <section id="experiencia">
+        <section id="experiencia  slide-in">
           <div className="pesquisa" > 
           <div className="pesquisa_descricao">
-              <h3>Pesquisa</h3>
-              <p>sei laaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              <h2>Pesquisa</h2>
+             <p>
+              A iniciação científica, iniciada em fevereiro de 2024 na PUC Minas, integra-se às atividades do
+                laboratório <strong>I'M SCIENCE</strong> na área de <strong>processamento e análise de imagens</strong>. 
+                Este centro de pesquisa concentra-se em processamento de imagem digital, vídeo e áudio, indexação e recuperação multimídia, 
+                e análise de conteúdo multimídia, com uma abordagem fundamental baseada em <strong>modelos de grafos</strong>.
+              </p>
+
+              <p>
+              No âmbito das diversas pesquisas desenvolvidas no laboratório, a atuação específica foi alocada para o projeto 
+              de <strong>classificação de células suscetíveis ao câncer</strong>. As contribuições incluem o trabalho com 
+              <strong>pré-processamento, aplicação de filtros de imagem e técnicas de segmentação</strong>,
+                etapas cruciais para a análise aprofundada de imagens biológicas. Para a realização desta pesquisa, as 
+                linguagens <strong>Python e C++</strong> são empregadas no desenvolvimento e implementação dos algoritmos.
               </p>
           </div>
           <div className="pesquisa_fotos">
@@ -198,14 +212,19 @@ export default function App() {
           </div>
           </div>
            <div className="fotos_pequenas">
-            {[1, 2].map((_, i) => (
-              <div className="foto-hover-wrapper" key={i}>
-                <img className="foto-hover-img" src={manaus} alt="SIBGRAP_2025" />
-                <div className="descricao-foto-hover">
-                  <h3>SIBGRAP_2025</h3>
-                </div>
+             <div className="foto-hover-wrapper">
+              <img className="foto-hover-img" src={bolsa} alt="SIBGRAP_2025" />
+              <div className="descricao-foto-hover">
+                <h3>SIBGRAP_2025</h3>
               </div>
-            ))}
+            </div>
+
+            <div className="foto-hover-wrapper">
+              <img className="foto-hover-img" src={manaus} alt="SIBGRAP_2025" />
+              <div className="descricao-foto-hover">
+                <h3>SIBGRAP_2025</h3>
+              </div>
+            </div>
           </div>
 
         </section>
@@ -269,7 +288,7 @@ export default function App() {
                 </div>
                 <div className="curiculo">
                 <h3 className="card-title">Curiculo</h3>
-                  <div> <i className="fas fa-eye"></i>  <a href="/curriculo.pdf" target="_blank" rel="noopener noreferrer">Visualize como PDF</a> </div>
+                  <div> <i className="fas fa-eye"></i>  <a href="/Luiza-Loures.pdf" target="_blank" rel="noopener noreferrer">Visualize como PDF</a> </div>
                 </div>
             </div>
             <div className="linha"></div>

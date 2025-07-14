@@ -30,12 +30,12 @@ html, body {
 
 
 ::-webkit-scrollbar-track {
-  background: #0099ad;
+  background: #080808;
 }
 
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, rgb(0, 102, 255), rgb(0, 119, 255), rgb(0, 110, 255));
+  background: linear-gradient(to bottom, rgb(0, 162, 255), rgb(0, 119, 255), rgb(0, 110, 255));
   border-radius: 10px;
   border: 3px solid transparent;
   background-clip: content-box;
@@ -83,18 +83,21 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(241, 241, 241, 0); /* fundo transparente escuro */
+  background-color: rgba(0, 0, 0, 0); /* fundo transparente escuro */
   padding: 1rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
   backdrop-filter: blur(8px);
-  top: 1%;
-  left: 3%;
-  right: 3%;
+  top: 1.5%;
+  left: 15%;
+  right: 15%;
   padding: 1%; 
-  border-radius: 25px;
+  border-radius: 35px;
+   box-shadow: 
+    0 0 15px rgba(32, 32, 32, 0.062), /* brilho externo */
+    inset 0 0 15px rgba(243, 243, 243, 0);
 }
 
 .nav-links {
@@ -108,9 +111,10 @@ html, body {
     width: 100%; /* Garante que o UL preencha a largura do NAV   font-weight: bold; */
 }
 .nav-links a {
-    color: var(--text-color-light); /* Verifique a cor do texto no Figma. Com fundo claro, talvez precise de texto escuro */
+    color: #F1F1F1; /* Verifique a cor do texto no Figma. Com fundo claro, talvez precise de texto escuro */
     text-decoration: none;
     text-transform: uppercase;
+    font-family: 'Josefin Sans', sans-serif;
     
 }
 /* NavBar */
@@ -144,11 +148,13 @@ html, body {
   transition: opacity 0.6s ease, transform 0.6s ease;
   max-width: 800px;
   margin: 0 auto;
-  font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5rem;
   color: rgb(243, 241, 234);
   text-align: justify;
   pointer-events: none;
+  font-style: normal;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
 }
 
 /* Quando scroll ativo */
@@ -287,10 +293,7 @@ html, body {
   flex-wrap: nowrap;
   gap: 4vw;
   width: 100%;
-  padding-left: 5rem;
-  padding-right: 5rem;
   box-sizing: border-box;
-  margin-top: 7rem;
 }
 .cursos > div {
   flex: 1 1 45%;
@@ -299,14 +302,15 @@ html, body {
 
 .subtitulo_2 {
   text-align: left;
-  font-weight: bold;
-  font-size: 1.3rem;
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 
 .descricao_2 {
   text-align: justify;
   text-justify: inter-word;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 /* Habilidades */
@@ -325,6 +329,11 @@ html, body {
   box-sizing: border-box;
 }
 
+.pesquisa h2{
+  font-size: 3rem;
+  font-weight: 400;
+}
+
 .pesquisa_descricao {
   text-align: left;
   word-break: break-word;
@@ -333,6 +342,7 @@ html, body {
 .pesquisa_descricao p {
   text-align: justify;
   font-size: 1.5rem;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .pesquisa_descricao h3 {
@@ -381,7 +391,8 @@ html, body {
 
 .fotos_pequenas img {
   border-radius: 7%;
-  max-width: 20rem;
+  max-height: 15rem;      /* altura fixa */
+  width: auto; 
   justify-items: right;
   text-align: right;
   align-items: right;
@@ -605,6 +616,7 @@ html, body {
   text-align: left;
   font-size: 3rem;
   padding-left: 13vw;
+  font-weight: 400;
 }
 
 /* Contato */
@@ -612,10 +624,9 @@ html, body {
 .contato {
   width: 100%;
   padding: 5rem 10vw; /* margem lateral proporcional */
-  background-color: rgb(8, 8, 8);
+  background-color: #080808;
   text-align: center;
   color: rgb(255, 254, 244);
-  font-family: Arial, sans-serif;
   box-sizing: border-box;
 }
 
@@ -805,10 +816,10 @@ html, body {
 
 .competencias-titulo h2 {
   margin-bottom: 1rem;
-  font-weight: 400;
   font-size: 2.5rem;
-  color: white;
+  color: #F1F1F1;
   line-height: 1.2;
+  font-weight: 400;
 }
 
 .descricao-wrapper {
@@ -822,7 +833,7 @@ html, body {
   top: 0;
   left: 0;
   font-size: 1.7rem;
-  color: #ccc;
+  color: #f1f1f18a;
   opacity: 0;
   transition: opacity 0.3s ease;
   max-width: 90%;
@@ -846,12 +857,12 @@ html, body {
 }
 
 .competencias-lista li {
-  font-size: 7rem;
+  font-size: 7.2rem;
   line-height: 0.53;
   padding: 1rem 1.5rem;
   cursor: pointer;
   position: relative;
-  color: white;
+  color: #F1F1F1;
   font-weight: 400;
   display: inline-block;
   max-width: max-content;
