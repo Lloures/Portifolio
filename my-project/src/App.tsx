@@ -13,6 +13,11 @@ import pillbox from './assets/pillbox.png';
 import minhokiller from './assets/minhokiler.png';
 import manaus from './assets/manaus.jpeg';
 import bolsa from './assets/comprida.jpeg';
+import logo from './assets/logo.png';
+import logo1 from './assets/logo_rosa.png';
+import logo2 from './assets/logo_ciano.png';
+import logo3 from './assets/logo_azul.png';
+
 
 import { motion } from "framer-motion"; 
 import VideoModal from "./components/VideoComModal";
@@ -41,23 +46,59 @@ function useSlideInOnScroll() {
 }
 
 export default function App() {
-  useSlideInOnScroll();
   const [scrollY, setScrollY] = useState(0);
   const [mostrarModal, setMostrarModal] = useState(false);
   const [videoAtual, setVideoAtual] = useState<string | null>(null);
   const [menuAberto, setMenuAberto] = useState(false);
   const [carregando, setCarregando] = useState(true);
 
-  const nome = "LUIZA";
+  const cores = ["#0097B0", "#0055A6", "#F1F1F1", "#030303", "#030303"];
+  const logos = [logo1, logo2, logo3, logo, logo];
 
-  const cores = ["#0055A6", "#0097B0", "#555C6B", "#893145", "#C50000"];
+  const [transicaoFinalizando, setTransicaoFinalizando] = useState(false);
+  const [index, setIndex] = useState(0);
 
+  // 👇 ATIVA APENAS QUANDO CARREGAMENTO TERMINA
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setCarregando(false);
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, []);
+    if (!carregando) {
+      const elements = document.querySelectorAll(".slide-in");
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      elements.forEach(el => observer.observe(el));
+
+      return () => {
+        elements.forEach(el => observer.unobserve(el));
+      };
+    }
+  }, [carregando]); // 👈 importante: depende de carregando
+
+useEffect(() => {
+  const sequencia = [0, 1, 2, 3, 4];
+  let contador = 0;
+
+  const rodar = () => {
+    if (contador < sequencia.length) {
+      setIndex(sequencia[contador]);
+      contador++;
+      setTimeout(rodar, 500); // muda logo/cor a cada 0.5s
+    } else {
+      setCarregando(false); // 👈 corta direto sem fade
+    }
+  };
+
+  rodar();
+}, []);
+
 
   console.log("Carregando:", carregando);
 
@@ -84,28 +125,31 @@ export default function App() {
   }, []);
 return (
   <>
-    {carregando ? (
-           <div className="preloader">
-    <div className="nome-animado">
-      <p className="nome-completo">
-        {nome.split("").map((letra, i) => (
-          <span
-            key={i}
-            className="letra"
-            style={{
-              color: cores[i] || "white",
-              animationDelay: `${i * 0.3}s`
-            }}
-          >
-            {letra}
-          </span>
-        ))}
-      </p>
-    </div>
+  {carregando ? (
+  <div
+    className={`tela-abertura ${transicaoFinalizando ? 'fadeout' : ''}`}
+    style={{ backgroundColor: cores[index] }}
+  >
+    <img
+      src={logos[index]}
+      alt="Logo"
+      className="logo-girando"
+      style={{ transform: `rotate(${index * 90}deg)` }}
+    />
   </div>
-    ) : (
+) : (
     <>
-      <AnimatedBackground />
+      
+        <div style={{
+        backgroundColor: 'black',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: -2,
+      }} />
+      <AnimatedBackground />       
 
       <div className="App">
 
