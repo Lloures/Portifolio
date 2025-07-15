@@ -82,25 +82,22 @@ export default function App() {
     }
   }, [carregando]); // 👈 importante: depende de carregando
 
-useEffect(() => {
-  const sequencia = [0, 1, 2, 3, 4];
-  let contador = 0;
+  useEffect(() => {
+    const sequencia = [0, 1, 2, 3, 4];
+    let contador = 0;
 
-  const rodar = () => {
-    if (contador < sequencia.length) {
-      setIndex(sequencia[contador]);
-      contador++;
-      setTimeout(rodar, 500); // muda logo/cor a cada 0.5s
-    } else {
-      setCarregando(false); // 👈 corta direto sem fade
-    }
-  };
+    const rodar = () => {
+      if (contador < sequencia.length) {
+        setIndex(sequencia[contador]);
+        contador++;
+        setTimeout(rodar, 500); // muda logo/cor a cada 0.5s
+      } else {
+        setCarregando(false); // 👈 corta direto sem fade
+      }
+    };
 
-  rodar();
-}, []);
-
-
-  console.log("Carregando:", carregando);
+    rodar();
+  }, []);
 
   const abrirVideo = (url: string) => {
     setVideoAtual(url);
@@ -165,11 +162,13 @@ return (
     </nav>
 
      <div className="navbar-responsiva">
+        
         <button
           className={`menu-botao ${menuAberto ? 'ativo' : ''}`}
           onClick={alternarMenu}
+          aria-label="Abrir menu"
         >
-          MENU
+          <img src={logo} alt="Logo" className="menu-logo" />
         </button>
 
         {menuAberto && (
@@ -315,16 +314,10 @@ return (
               <div className="fotos_pequenas">
              <div className="foto-hover-wrapper">
               <img className="foto-hover-img" src={bolsa} alt="SIBGRAP_2025" />
-              <div className="descricao-foto-hover">
-                <h3>SIBGRAP_2025</h3>
-              </div>
             </div>
 
             <div className="foto-hover-wrapper">
               <img className="foto-hover-img" src={manaus} alt="SIBGRAP_2025" />
-              <div className="descricao-foto-hover">
-                <h3>SIBGRAP_2025</h3>
-              </div>
             </div>
           </div>
             </div>

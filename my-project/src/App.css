@@ -422,9 +422,6 @@ html, body {
   object-fit: cover;
 }
 
-
-
-
 .descricao-foto-hover {
   position: absolute;
   top: 0;
@@ -445,14 +442,6 @@ html, body {
   text-align: center;
 }
 
-.foto-hover-wrapper:hover .foto-hover-img {
-  opacity: 0;
-}
-
-.foto-hover-wrapper:hover .descricao-foto-hover {
-  opacity: 1;
-  pointer-events: auto;
-}
 
 /* 1. Estilo da seção de pesquisa */
 .pesquisa {
@@ -1731,7 +1720,7 @@ html, body {
 }
 
 
-/* Oculta a NAVBAR tradicional em telas pequenas */
+/* Oculta a ______________________________NAVBAR____________________________________ */
 @media (max-width: 768px) {
   .navbar {
     display: none;
@@ -1790,6 +1779,23 @@ html, body {
   transition: all 0.3s ease;
   box-shadow: 0 0 25px rgba(5, 5, 5, 0.041), inset 0 0 15px rgba(255, 255, 255, 0.041);
 }
+
+
+.menu-botao {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.menu-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 
 
 .menu-botao.ativo {
