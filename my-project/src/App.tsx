@@ -76,7 +76,7 @@ export default function App() {
         <ul className="nav-links">
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#habilidades">Competências</a></li>
-          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#experiencia">Pesquisa</a></li>
           <li><a href="#projetos">Projetos</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
@@ -186,7 +186,7 @@ export default function App() {
 
         <section className="competencias  slide-in"> <Competencias /> </section>
         
-        <section id="experiencia  slide-in">
+        <section id="experiencia">
           <div className="pesquisa" > 
           <div className="pesquisa_descricao">
               <h2>Pesquisa</h2>
@@ -197,7 +197,7 @@ export default function App() {
                 e análise de conteúdo multimídia, com uma abordagem fundamental baseada em <strong>modelos de grafos</strong>.
               </p>
 
-              <p>
+              <p style={{ marginTop: '-0.5rem' }}>
               No âmbito das diversas pesquisas desenvolvidas no laboratório, a atuação específica foi alocada para o projeto 
               de <strong>classificação de células suscetíveis ao câncer</strong>. As contribuições incluem o trabalho com 
               <strong>pré-processamento, aplicação de filtros de imagem e técnicas de segmentação</strong>,
@@ -208,10 +208,7 @@ export default function App() {
           <div className="pesquisa_fotos">
             <div className="foto_principal slide-in">
               <ImagemAnimada />
-            </div>
-          </div>
-          </div>
-           <div className="fotos_pequenas">
+              <div className="fotos_pequenas">
              <div className="foto-hover-wrapper">
               <img className="foto-hover-img" src={bolsa} alt="SIBGRAP_2025" />
               <div className="descricao-foto-hover">
@@ -226,7 +223,9 @@ export default function App() {
               </div>
             </div>
           </div>
-
+            </div>
+          </div>
+          </div>
         </section>
 
 

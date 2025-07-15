@@ -24,7 +24,7 @@ export default function Competencias() {
             <p className="descricao visivel">{competencias[mostrarIndex].descricao}</p>
           ) : (
             <p className="descricao visivel">
-              Passe o mouse sobre uma competência para ver a descrição.
+              Passe o mouse sobre uma competência.
             </p>
           )}
         </div>
