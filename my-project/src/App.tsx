@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
-
 import AnimatedBackground from "./components/AnimatedBackground";
 import ImagemAnimada from "./components/ImagemAnimada";
 import VideoComModal from "./components/VideoComModal";
 import Competencias from "./components/Competencias";
-
-
 
 import "./App.css";
 
@@ -43,12 +40,26 @@ function useSlideInOnScroll() {
   }, []);
 }
 
-
 export default function App() {
   useSlideInOnScroll();
   const [scrollY, setScrollY] = useState(0);
   const [mostrarModal, setMostrarModal] = useState(false);
   const [videoAtual, setVideoAtual] = useState<string | null>(null);
+  const [menuAberto, setMenuAberto] = useState(false);
+  const [carregando, setCarregando] = useState(true);
+
+  const nome = "LUIZA";
+
+  const cores = ["#00a2ff", "#ba3cff", "#ff8a00", "#00ff00", "#ff0066"];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCarregando(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  console.log("Carregando:", carregando);
 
   const abrirVideo = (url: string) => {
     setVideoAtual(url);
@@ -60,6 +71,10 @@ export default function App() {
     setVideoAtual(null);
   };
 
+  const alternarMenu = () => {
+    setMenuAberto(!menuAberto);
+  };
+
   const isScrolled = scrollY > 100;
 
   useEffect(() => {
@@ -67,14 +82,28 @@ export default function App() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const [menuAberto, setMenuAberto] = useState(false);
-
-  const alternarMenu = () => {
-    setMenuAberto(!menuAberto);
-  };
-
-  return (
+return (
+  <>
+    {carregando ? (
+           <div className="preloader">
+    <div className="nome-animado">
+      <p className="nome-completo">
+        {nome.split("").map((letra, i) => (
+          <span
+            key={i}
+            className="letra"
+            style={{
+              color: cores[i] || "white",
+              animationDelay: `${i * 0.3}s`
+            }}
+          >
+            {letra}
+          </span>
+        ))}
+      </p>
+    </div>
+  </div>
+    ) : (
     <>
       <AnimatedBackground />
 
@@ -328,6 +357,8 @@ export default function App() {
        {mostrarModal && videoAtual && (
         <VideoModal videoUrl={videoAtual} onClose={fecharVideo} />
       )}
-    </>
-  );
+       </>
+    )}
+  </>
+);
 }

@@ -1836,3 +1836,58 @@ html, body {
   border-radius: 25px;
   border: none;
 }
+
+
+/*____________________________________MEDO________________________________________*/
+
+
+/* Tela preta e centralização */
+
+.preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: black;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nome-completo {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 7rem;
+
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+
+  display: flex;
+  flex-direction: column;  /* letras uma embaixo da outra */
+  align-items: center;     /* centraliza na horizontal */
+
+  letter-spacing: 0;
+  user-select: none;
+
+  line-height: 0.7;
+}
+
+.letra {
+  opacity: 0;
+  display: block;
+  animation: cair 0.5s forwards;
+  /* A cor cada letra terá inline no React */
+}
+
+@keyframes cair {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
