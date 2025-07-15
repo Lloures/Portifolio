@@ -68,26 +68,57 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [menuAberto, setMenuAberto] = useState(false);
+
+  const alternarMenu = () => {
+    setMenuAberto(!menuAberto);
+  };
 
   return (
     <>
       <AnimatedBackground />
-      <nav className="navbar">
-        <ul className="nav-links">
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#habilidades">Competências</a></li>
-          <li><a href="#experiencia">Pesquisa</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
+
       <div className="App">
+
+
+       <nav className="navbar">
+      <ul className="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#habilidades">Competências</a></li>
+        <li><a href="#experiencia">Pesquisa</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+     <div className="navbar-responsiva">
+        <button
+          className={`menu-botao ${menuAberto ? 'ativo' : ''}`}
+          onClick={alternarMenu}
+        >
+          MENU
+        </button>
+
+        {menuAberto && (
+          <div className="menu-flutuante">
+            <ul className="menu-lista-flutuante">
+              <li><a href="#sobre" onClick={alternarMenu}>Sobre</a></li>
+              <li><a href="#habilidades" onClick={alternarMenu}>Competências</a></li>
+              <li><a href="#experiencia" onClick={alternarMenu}>Pesquisa</a></li>
+              <li><a href="#projetos" onClick={alternarMenu}>Projetos</a></li>
+              <li><a href="#contato" onClick={alternarMenu}>Contato</a></li>
+            </ul>
+          </div>
+        )}
+      </div>
+
+
       <section className={`Principal ${scrollY > 150 ? 'expandido' : ''}`} id="Principal">
-  <div className="conteudo">
-    <div className={`nome ${isScrolled ? 'nome-menor' : ''}`}>
-      <p className="titulo">LUIZA LOURES</p>
-      <p className="subtitulo">FRONTEND & PESQUISA</p>
-    </div>
+        <div className="conteudo">
+          <div className={`nome ${isScrolled ? 'nome-menor' : ''}`}>
+            <p className="titulo">LUIZA LOURES</p>
+            <p className="subtitulo">FRONTEND & PESQUISA</p>
+          </div>
 
 
     <div className="descricao" id="sobre">
