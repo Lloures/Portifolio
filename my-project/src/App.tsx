@@ -50,7 +50,7 @@ export default function App() {
 
   const nome = "LUIZA";
 
-  const cores = ["#00a2ff", "#ba3cff", "#ff8a00", "#00ff00", "#ff0066"];
+  const cores = ["#0055A6", "#0097B0", "#555C6B", "#893145", "#C50000"];
 
   useEffect(() => {
     const timer = setTimeout(() => {
