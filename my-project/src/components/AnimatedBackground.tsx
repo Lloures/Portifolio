@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import noiseImg from '/home/lloures/Documentos/Portifolio/Portifolio/my-project/src/assets/noise.png';
+import noiseImg from '../assets/noise.png';
 
 
 const vertexShader = `
