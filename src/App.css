@@ -1539,8 +1539,8 @@ html, body {
   }
 
   .competencias-lista li {
-    font-size: 3.5rem;
-    line-height: 0.53;
+    font-size: 3rem;
+    line-height: 0.60;
     padding: 1rem;
     max-width: 100%;
     display: inline-block;

@@ -383,7 +383,7 @@ return (
     </a> </div>
                 </div>
                 <div className="curiculo">
-                <h3 className="card-title">Curiculo</h3>
+                <h3 className="card-title">Curículo</h3>
                   <div> <i className="fas fa-eye"></i>  <a href="/Luiza-Loures.pdf" target="_blank" rel="noopener noreferrer">Visualize como PDF</a> </div>
                 </div>
             </div>
